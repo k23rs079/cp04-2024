@@ -225,6 +225,16 @@
                     $('#btnA').prop('disabled', false);
                 }
 
+                function btnDClick(e){
+                    active = true;
+                    var buttonDstartTime = new Date();
+                    stopTime += buttonDstartTime - secondstartTime;
+                    $('#btnA').prop('disabled', false);
+                    $('#btnB').prop('disabled', false);
+                    $('#btnD').prop('disabled', false);
+                    $('#time').html("再開しました！");
+                }
+
 
                 // 繰り返し実行する処理
                 function timer(){
