@@ -229,7 +229,7 @@
                     alarm();
                     active = false;
                     period = 60*parseInt( $("#minute").val() ) + parseInt( $("#second").val() );
-                    $("#time").html("経過時間: 0");
+                    $("#time").html("経過時間: 0秒");
                     $("#remain").html("残り時間: " + period);
                     $('#btnA').prop('disabled', false);
                     $('#btnD').prop('disabled', true);
@@ -250,7 +250,7 @@
                     secondstartTime = 0;
                     active = false;
                     period = 180;
-                    $('#time').html('経過時間: 0');
+                    $('#time').html('経過時間: 0秒');
                     $('#remain').html('残り時間: ' + period + '秒');
                     $('#btnA').prop('disabled', false);
                     $('#btnD').prop('disabled', true);
@@ -270,7 +270,7 @@
                     if(active){
                       etime = parseInt( (new Date() - startTime-stopTime)/1000);
                       rest = period - etime;
-                      $("#time").html("経過時間：" + etime);
+                      $("#time").html("経過時間：" + etime+"秒");
                       $("#remain").html("残り時間：" + rest +"秒");
                       analog(rest);
 
