@@ -51,7 +51,7 @@
                     });
 
                     $('#btnE').click(function(e){
-                        btnDClick(e);
+                        btnEClick(e);
                     });
 
                     init();
@@ -246,12 +246,16 @@
                 }
 
                 function btnEClick(e){
-                    stopTime = 0;
-                    secondstartTime = 0;
-                    active = false;
                     period = 3600*7;
-                    $('#time').html('経過時間: 0秒');
-                    $('#remain').html('残り時間: ' + period + '秒');
+                    active = true;
+                    if(secondstartTime == 0){
+                        startTime = new Date();
+                    }else{
+                        var buttonAstopTime = new Date();
+                        stopTime = buttonAstopTime - secondstartTime;
+                    }
+                    $('#time').html('経過時間:'+rest+'秒');
+                    $('#remain').html('残り時間: '+ period +'秒');
                     $('#btnA').prop('disabled', false);
                     $('#btnD').prop('disabled', true);
                     var canvas = $('#mycanvas')[0];
