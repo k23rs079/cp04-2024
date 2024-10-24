@@ -249,7 +249,7 @@
                     stopTime = 0;
                     secondstartTime = 0;
                     active = false;
-                    period = 180;
+                    period = 3600*7;
                     $('#time').html('経過時間: 0秒');
                     $('#remain').html('残り時間: ' + period + '秒');
                     $('#btnA').prop('disabled', false);
@@ -309,7 +309,7 @@
         <button id="btnB">stop</button>
         <button id="btnC">Set</button>
         <button id="btnD">Resume</button>
-        <button id="btnE">ramen_timer</button>
+        <button id="btnE">Get up</button>
         <input type="number" id="minute" value="0" />
         <input type="number" id="second" value="15" />
     </body>
