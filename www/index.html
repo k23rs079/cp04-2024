@@ -282,9 +282,10 @@
                           active = false;
                           alarm();
                       }
+
                       var m = parseInt(rest/60);
                       var s = parseInt(rest - m*60);
-                      $("#remain").html("残り時間："+ rest+"秒" +"("+ m +":"+s+")");
+                      $("#remain").html("残り時間："+rest+"秒" +"("+ m +":"+s+")");
 
                       var mstr = "分： ";
                       for(var i=0; i<m; i++){
