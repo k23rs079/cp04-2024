@@ -245,6 +245,26 @@
                     $('#time').html("再開しました！");
                 }
 
+                function btnEClick(e){
+                    stopTime = 0;
+                    secondstartTime = 0;
+                    alarm();
+                    active = false;
+                    period = 180;
+                    $('#time').html('経過時間:0');
+                    $('#remain').html('残り時間:'+period);
+                    $('#btnA').prop('disabled', false);
+                    $('#btnD').prop('disabled', true);
+
+                    var canvas = $('#mycanvas')[0];
+                    var ctx = canvas.getContext("2d");
+                    var img = new Image();
+                    img.src = "cup_noodles.png";
+                    img.onload = function(){
+                    ctx.drawImage(img, 35, 0, 300, 300);
+                    }
+                }
+
 
                 // 繰り返し実行する処理
                 function timer(){
