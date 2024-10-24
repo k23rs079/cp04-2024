@@ -208,7 +208,9 @@
                     }
                     $('#btnA').prop('disabled', true);
                     $('#btnB').prop('disabled', false);
+                    $('#btnC').prop('disabled', true);
                     $('#btnD').prop('disabled', true);
+                    $('#btnE').prop('disabled', true);
                     $('#time').html("タイマー開始！");
                 }
 
@@ -218,7 +220,9 @@
                     secondstartTime = new Date();
                     $('#btnA').prop('disabled', true);
                     $('#btnB').prop('disabled', true);
+                    $('#btnC').prop('disabled', false);
                     $('#btnD').prop('disabled', false);
+                    $('#btnE').prop('disabled', false);
                     $('#time').html("タイマー停止中！");
                 }
 
@@ -239,9 +243,11 @@
                     active = true;
                     var buttonDstartTime = new Date();
                     stopTime += buttonDstartTime - secondstartTime;
-                    $('#btnA').prop('disabled', false);
+                    $('#btnA').prop('disabled', true);
                     $('#btnB').prop('disabled', false);
-                    $('#btnD').prop('disabled', false);
+                    $('#btnC').prop('disabled', true);
+                    $('#btnD').prop('disabled', true);
+                    $('#btnE').prop('disabled', true);
                     $('#time').html("再開しました！");
                 }
 
@@ -257,7 +263,10 @@
                     $('#time').html('経過時間:'+rest+'秒');
                     $('#remain').html('残り時間: '+ period +'秒');
                     $('#btnA').prop('disabled', false);
+                    $('#btnB').prop('disabled', false);
+                    $('#btnC').prop('disabled', false);
                     $('#btnD').prop('disabled', true);
+                    $('#btnE').prop('disabled', true);
                     var canvas = $('#mycanvas')[0];
                     var ctx = canvas.getContext("2d");
                     var img = new Image();
