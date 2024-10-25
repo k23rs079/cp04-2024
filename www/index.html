@@ -281,6 +281,23 @@
                     }
                     active = true;
                 }
+
+                function btnFClick(e) {
+                    active = false;
+                    startTime = 0;
+                    period = 0;
+                    rest = 0;
+                    etime = 0;
+                    stopTime = 0;
+                    secondstartTime = 0;
+                    $('#time').html("経過時間: 0秒");
+                    $('#remain').html("残り時間: 0秒");
+                    $('#btnA').prop('disabled', false);
+                    $('#btnB').prop('disabled', true);
+                    $('#btnC').prop('disabled', false);
+                    $('#btnD').prop('disabled', true);
+                    $('#btnE').prop('disabled', false);
+                }
                     
                 // 繰り返し実行する処理
                 function timer(){
