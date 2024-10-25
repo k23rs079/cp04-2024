@@ -308,14 +308,35 @@
                       $("#remain").html("残り時間：" + rest +"秒");
                       analog(rest);
 
-                      if(rest<=0){
-                          active = false;
-                          alarm();
-                      }
+                      var canvas = $("#mycanvas")[0];
+                      var ctx = canvas.getContext("2d");
 
-                      var m = parseInt(rest/60);
-                      var s = parseInt(rest - m*60);
-                      $("#remain").html("残り時間："+rest+"秒" +"("+ m +":"+s+")");
+                      if (rest > period * 0.5) {
+                          document.body.style.backgroundColor = "lightgreen";
+                          ctx.fillStyle = 'rgba(0, 255, 0, 0.4)';
+                        } else if (rest > period * 0.2) {
+                            document.body.style.backgroundColor = "lightyellow";
+                            ctx.fillStyle = 'rgba(255, 255, 0, 0.4)';
+                        } else {
+                            document.body.style.backgroundColor = "lightcoral";
+                            ctx.fillStyle = 'rgba(255, 0, 0, 0.4)';
+                        }
+                    if (rest <= 0) {
+                        active = false;
+                        alarm();
+                    }
+                    var m = parseInt(rest / 60);
+                    var s = parseInt(rest - m * 60);
+                    $("#remain").html("残り時間：" + rest + "秒" + "(" + m + ":" + s + ")");
+
+                    if(rest<=0){
+                        active = false;
+                        alarm();
+                    }
+
+                    var m = parseInt(rest/60);
+                    var s = parseInt(rest - m*60);
+                    $("#remain").html("残り時間："+rest+"秒" +"("+ m +":"+s+")");
 
                       /*
                       var mstr = "分： ";
